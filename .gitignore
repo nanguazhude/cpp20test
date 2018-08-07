@@ -1,2 +1,9 @@
-
+/debug
+/release
 *.user
+*.stash
+*.vcxproj
+*.filters
+*.db
+*.opendb
+*.ipch
