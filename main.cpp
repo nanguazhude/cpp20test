@@ -45,6 +45,13 @@ public:
 	std::promise<RunObject *> promise;
 };
 
+class One final :public QObject, public std::enable_shared_from_this<One> {
+private:
+	One() { }
+public:
+	static std::shared_ptr<One> instance() { return std::shared_ptr<One>{ new One }; }
+};
+
 int main(int argc, char *argv[]) {
 	QApplication app(argc, argv);
 
@@ -52,9 +59,13 @@ int main(int argc, char *argv[]) {
 	thread->start();
 	thread->promise.get_future().get();
 
-
+	auto t = One::instance();
+	QObject::connect(t.get(), &QObject::destroyed, t.get(), []() {}, Qt::QueuedConnection);
+	
 	MainWindow window;
 	window.show();
 
 	return app.exec();
 }
+
+

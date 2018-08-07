@@ -25,11 +25,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        MainWindow.cpp
+        MainWindow.cpp \
+    RunObject.cpp
 
 HEADERS += \
         $$PWD/MainWindow.hpp \
-        $$PWD/include_all.hpp
+        $$PWD/include_all.hpp \
+        $$PWD/RunObject.hpp
 
 FORMS += \
         MainWindow.ui
