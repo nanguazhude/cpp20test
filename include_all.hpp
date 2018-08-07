@@ -1,5 +1,5 @@
-﻿#ifndef __INCLUDE_ALL
-#define __INCLUDE_ALL
+﻿#ifndef _1_INCLUDE_ALL
+#define _1_INCLUDE_ALL
 
 #include <type_traits>
 #include <tuple>

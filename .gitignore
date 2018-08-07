@@ -1,5 +1,6 @@
 /debug
 /release
+/.vs
 *.user
 *.stash
 *.vcxproj
@@ -7,3 +8,4 @@
 *.db
 *.opendb
 *.ipch
+*.sln

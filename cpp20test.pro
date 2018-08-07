@@ -28,7 +28,8 @@ SOURCES += \
         MainWindow.cpp
 
 HEADERS += \
-        MainWindow.hpp
+        $$PWD/MainWindow.hpp \
+        $$PWD/include_all.hpp
 
 FORMS += \
         MainWindow.ui
@@ -36,6 +37,7 @@ FORMS += \
 CONFIG += console
 win32-msvc*{
     QMAKE_CXXFLAGS += /std:c++latest
+    QMAKE_CXXFLAGS += /await
 }else{
     CONFIG+=c++17
 }#
