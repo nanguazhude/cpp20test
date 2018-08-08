@@ -39,6 +39,7 @@ public:
 	virtual std::shared_ptr<RunObject> getWatcher() const =0;
 public:
 signals:
+	void quitThread();
 	void runFunction(const std::function<void(void)> &)/*DirectConnection*/;
 	void asyncRunFunction(const std::function<void(void)> &)/*QueuedConnection*/;
 	void blockRunFunction(const std::function<void(void)> &)/*BlockingQueuedConnection*/;

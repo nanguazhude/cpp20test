@@ -140,6 +140,8 @@ std::shared_ptr<RunObject> RunObject::createObject() {
 	{
 		static_cast<ThisRunObject *>(varAns.get())->_private_tmp_runobject = {};
 	}
+	varAns->connect(varAns.get(), &RunObject::quitThread, varThread, &QThread::quit, Qt::QueuedConnection);
+	varAns->connect(qApp, &QCoreApplication::aboutToQuit, varAns.get(), &RunObject::quitThread, Qt::QueuedConnection);
 	return std::move(varAns);
 }
 
